@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 #{title}
+  //- pre= JSON.stringify(locals, null, 2)
+  if currentUser
+    span Hello, 
+    strong #{currentUser.first_name}
+    br
+    a(href='/log-out') Log out
+  else
+    p Not a member? Register below.
+    a(href='/sign-up') Sign up
+    br
+    p Existing member? Log in below.
+    a(href='/log-in') Log in

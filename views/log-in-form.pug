@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 #{title}
+  //- pre= JSON.stringify(locals, null, 2)
+  form(action="/log-in" method='POST')
+    input(name='username', type='email')
+    input(name='password', type='password')
+    button(type='submit') Submit
